@@ -1,4 +1,4 @@
-name := "fsm.machine"
+name := "fsm-machine"
 organization := "au.com.carringbushsw"
 organizationName := "carringbush software"
 version := "1.0-SNAPSHOT"
