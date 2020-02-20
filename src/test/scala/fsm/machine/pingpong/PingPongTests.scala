@@ -5,25 +5,21 @@ import utest._
 
 object PingPongTests extends TestSuite {
 
-  private val pp = new PingPong(java.time.Duration.ofMillis(20))
+  private val pp = new PingPongPlayer(java.time.Duration.ofMillis(20))
 
   val tests = Tests {
     test("pingpong") {
-      assert(pp.initialState == pp.Server())
+      assert(pp.initialState == pp.Idle())
 
       pp.send(Ping())
       Thread.sleep(200)
-      assert(pp.state == pp.Server())
-
-      pp.send(Ping())
-      Thread.sleep(200)
+      assert(pp.state == pp.AwaitingReturn()) // straight away?? NO!!
 
       // state machine hasn't finished yet, running in the background
       ac.waitForInactivity()
       // now state machine has finished
 
-      // final state
-      assert(pp.state == pp.Server())
+      // final state?? after return from remote player??
 
     } // test.pingpong
 
