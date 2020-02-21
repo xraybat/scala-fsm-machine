@@ -3,7 +3,7 @@ package fsm.machine.pingpong
 import fsm.machine.ContextPrefs._
 import utest._
 
-object PingPongTests extends TestSuite {
+object PingPongPlayerTests extends TestSuite {
 
   // can specify 'ac' context explicitly. helpful since cask uses castor too.
   private val pp = new PingPongPlayer(java.time.Duration.ofMillis(20))//(ContextPrefs.ac)
@@ -25,4 +25,4 @@ object PingPongTests extends TestSuite {
     } // test.pingpong
 
   } // tests
-} // PingPongTests
+} // PingPongPlayerTests
