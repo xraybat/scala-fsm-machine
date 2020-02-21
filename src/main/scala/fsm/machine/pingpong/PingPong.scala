@@ -38,4 +38,4 @@ class PingPongPlayer  // as fsm-actor
     super.run(msg)
     pprint.log(s"$state", tag="post:")
   }
-} // PingPong
+} // PingPongPlayer
