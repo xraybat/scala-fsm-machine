@@ -11,7 +11,7 @@ logBuffered in Test := false
 
 libraryDependencies ++= Seq(
   "com.lihaoyi" %% "castor" % "0.1.1",
-  "com.lihaoyi" %% "pprint" % "0.5.6",
+  "com.lihaoyi" %% "pprint" % "0.5.9",
   "com.lihaoyi" %% "utest" % "0.7.3" % "test"
   //"org.scalactic" %% "scalactic" % "3.0.8",
   //"org.scalatest" %% "scalatest" % "3.0.8" % "test"
