@@ -6,7 +6,7 @@ import pprint._
 // *note:* we control msg structure in full
 sealed trait Msg
 case class Ping() extends Msg
-case class Pong() extends Msg
+//case class Pong() extends Msg   // QU??: only do pings from local->remote??
 
 class PingPongPlayer  // as fsm-actor
   (flightTime: java.time.Duration)
@@ -27,7 +27,8 @@ class PingPongPlayer  // as fsm-actor
   }) // Idle
   
   case class AwaitingReturn() extends State({
-    case Pong() =>
+    case Ping() =>
+      // QU??: how much time did it take??
       Idle()
       
   }) // AwaitingReturn
