@@ -1,14 +1,26 @@
-import mill._, scalalib._
+import mill._, scalalib._, publish._
 
-object machine extends ScalaModule{
+object machine extends ScalaModule with PublishModule {
   def scalaVersion = "2.13.1"
+  def publishVersion = "0.0.1"
 
   def ivyDeps = Agg(
     ivy"com.lihaoyi::castor:0.1.1",
     ivy"com.lihaoyi::pprint:0.5.9",
   )
-  
-  object test extends Tests{
+
+  def pomSettings = PomSettings(
+    description = "fsm-machine",
+    organization = "au.com.carringbushsw",
+    url = "https://github.com/xraybat/scal-fsm-machine",
+    licenses = Seq(License.MIT),
+    versionControl = VersionControl.github("xraybat", "scala-fsm-machine"),
+    developers = Seq(
+      Developer("xraybat", "xraybat","https://github.com/xraybat")
+    )
+  )
+
+  object test extends Tests {
     def testFrameworks = Seq("utest.runner.Framework")
 
     def ivyDeps = Agg(
