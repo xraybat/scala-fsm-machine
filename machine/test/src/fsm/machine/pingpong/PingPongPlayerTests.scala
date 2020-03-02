@@ -14,7 +14,7 @@ object PingPongPlayerTests extends TestSuite {
 
       pp.send(Ping())
       Thread.sleep(200)
-      assert(pp.state == pp.AwaitingReturn()) // straight away?? NO!!
+      assert(pp.state == pp.Waiting()) // straight away?? NO!!
 
       // state machine hasn't finished yet, running in the background
       ac.waitForInactivity()

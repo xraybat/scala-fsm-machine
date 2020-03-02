@@ -22,16 +22,16 @@ class PingPongPlayer  // as fsm-actor
       // and schedule a state change here loclly
       //no: ac.scheduleMsg(this, Ping(), flightTime)
       //requests("remote-ip/ping")
-      AwaitingReturn()
+      Waiting()
 
   }) // Idle
   
-  case class AwaitingReturn() extends State({
+  case class Waiting() extends State({
     case Ping() =>
       // QU??: how much time did it take??
       Idle()
       
-  }) // AwaitingReturn
+  }) // Waiting
 
   // for debugging only
   override def run(msg: Msg): Unit = {
