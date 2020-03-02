@@ -12,7 +12,7 @@ object machine extends ScalaModule with PublishModule {
   def pomSettings = PomSettings(
     description = "fsm-machine",
     organization = "au.com.carringbushsw",
-    url = "https://github.com/xraybat/scal-fsm-machine",
+    url = "https://github.com/xraybat/scala-fsm-machine",
     licenses = Seq(License.MIT),
     versionControl = VersionControl.github("xraybat", "scala-fsm-machine"),
     developers = Seq(
