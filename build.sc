@@ -1,6 +1,7 @@
 import mill._, scalalib._, publish._
 
 object machine extends ScalaModule with PublishModule {
+  def artifactName = "fsm-machine"
   def scalaVersion = "2.13.1"
   def publishVersion = "0.0.1"
 
